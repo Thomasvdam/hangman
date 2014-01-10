@@ -22,6 +22,7 @@
 		25E58F9D187ED438008BAA37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7C187ED438008BAA37 /* UIKit.framework */; };
 		25E58FA5187ED438008BAA37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25E58FA3187ED438008BAA37 /* InfoPlist.strings */; };
 		25E58FA7187ED438008BAA37 /* HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E58FA6187ED438008BAA37 /* HangmanTests.m */; };
+		25E58FB118804A54008BAA37 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 25E58FB018804A54008BAA37 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		25E58FA2187ED438008BAA37 /* HangmanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HangmanTests-Info.plist"; sourceTree = "<group>"; };
 		25E58FA4187ED438008BAA37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		25E58FA6187ED438008BAA37 /* HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HangmanTests.m; sourceTree = "<group>"; };
+		25E58FB018804A54008BAA37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		25E58F6C187ED437008BAA37 = {
 			isa = PBXGroup;
 			children = (
+				25E58FB018804A54008BAA37 /* README.md */,
 				25E58F7E187ED438008BAA37 /* Hangman */,
 				25E58FA0187ED438008BAA37 /* HangmanTests */,
 				25E58F77187ED438008BAA37 /* Frameworks */,
@@ -236,6 +239,7 @@
 			files = (
 				25E58F94187ED438008BAA37 /* Images.xcassets in Resources */,
 				25E58F83187ED438008BAA37 /* InfoPlist.strings in Resources */,
+				25E58FB118804A54008BAA37 /* README.md in Resources */,
 				25E58F8C187ED438008BAA37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +473,7 @@
 				25E58FAC187ED438008BAA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25E58FAD187ED438008BAA37 /* Build configuration list for PBXNativeTarget "HangmanTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +482,7 @@
 				25E58FAF187ED438008BAA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
