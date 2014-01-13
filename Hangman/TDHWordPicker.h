@@ -1,5 +1,5 @@
 //
-//  TDHSQLiteDBManager.h
+//  TDHWordPicker.h
 //  Hangman
 //
 //  Created by Thomas van Dam on 13/01/2014.
@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
-@interface TDHSQLiteDBManager : NSObject
+@interface TDHWordPicker : NSObject
 
+@property (strong) NSString *databasePath;
 @property sqlite3 *database;
 
 - (id)init;
 
-- (NSSet *)wordsWithLength:(int)size;
+- (NSString *)pickWordWith:(int)size;
 
 @end

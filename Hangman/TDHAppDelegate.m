@@ -10,17 +10,31 @@
 #import "TDHGameplay.h"
 #import "TDHMainViewController.h"
 
+@interface TDHAppDelegate ()
+
+@property TDHGameplay *gameplay;
+
+@end
+
 @implementation TDHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Get user defaults.
+    // Get the user defaults.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // Set default user defaults on first launch.
+    if(![defaults boolForKey:@"firstRun"]) {
+        [defaults setInteger:8 forKey:@"mistakesVal"];
+        [defaults setInteger:4 forKey:@"wordLengthVal"];
+        // 'Save'.
+        [defaults setBool:YES forKey:@"firstRun"];
+    }
+    
     // Initiate a new gameplay object and pass the reference to the main view controller.
-    TDHGameplay *gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
+    self.gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
     TDHMainViewController *mainView = (TDHMainViewController *)self.window.rootViewController;
-    mainView.gameplay = gameplay;
+    mainView.gameplay = self.gameplay;
     
     return YES;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "TDHGameplay.h"
+#import "TDHWordPicker.h"
 
 @interface TDHGameplay ()
 
@@ -19,26 +20,30 @@
 
 @implementation TDHGameplay
 
+/*****
+ * Create an instance of the gameplay class based on the specifications passed.
+ *****/
 + (id)newGameWithWordLength:(int)wordLength mistakes:(int)mistakes {
-    return [[self alloc] initStub];
+    return [[self alloc] initWithWordLength:wordLength mistakes:mistakes];
 }
-
-- (id)initStub {
+- (id)initWithWordLength:(int)wordLength mistakes:(int)mistakes {
     self = [super init];
     
     if (self) {
-        // TODO
-        self.pickedWord = [NSString stringWithFormat:@"BEAR"];
-        self.mistakes = 6;
+        TDHWordPicker *wordPicker = [[TDHWordPicker alloc] init];
+        self.pickedWord = [wordPicker pickWordWith:wordLength];
+        self.mistakes = mistakes;
         self.unusedLetters = [self initiateLetters];
-        self.score = 1;
+        self.score = 1; // TODO!
     }
-    
     return self;
 }
 
+/*****
+ * TODO.
+ *****/
 + (id)resumeGameWithWord:(NSString *)word unusedLetters:(NSMutableSet *)unusedLetters mistakesRemaining:(int)mistakes score:(int)score{
-    return [[self alloc] initStub];
+    return [[self alloc] init];
 }
 
 /*****

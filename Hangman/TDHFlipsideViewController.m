@@ -37,21 +37,31 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (IBAction)sliderChanged:(id)sender {
+- (IBAction)mistakeSliderChanged:(id)sender {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     UISlider *slider = (UISlider *)sender;
     int val = slider.value;
     
-    // Update the correct label and default setting.
-    if (slider == self.mistakeSlider) {
-        self.mistakesLabel.text = [NSString stringWithFormat:@"%d", val];
-        [defaults setInteger:val forKey:@"mistakesVal"];
-    } else if (slider == self.wordLengthSlider) {
-        self.wordLengthLabel.text = [NSString stringWithFormat:@"%d", val];
-        [defaults setInteger:val forKey:@"wordLengthVal"];
-    }
+    // Update the label and default setting.
+    self.mistakesLabel.text = [NSString stringWithFormat:@"%d", val];
+    [defaults setInteger:val forKey:@"mistakesVal"];
+    
+    // Save settings.
+    [defaults synchronize];
+}
+
+- (IBAction)wordLengthSliderChanged:(id)sender {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    UISlider *slider = (UISlider *)sender;
+    int val = slider.value;
+    
+    // Update the label and default setting.
+    self.wordLengthLabel.text = [NSString stringWithFormat:@"%d", val];
+    [defaults setInteger:val forKey:@"wordLengthVal"];
     
     // Save settings.
     [defaults synchronize];

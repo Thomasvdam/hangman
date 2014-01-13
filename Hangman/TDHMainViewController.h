@@ -11,6 +11,6 @@
 
 @interface TDHMainViewController : UIViewController <TDHFlipsideViewControllerDelegate>
 
-@property (strong) TDHGameplay *gameplay;
+@property (weak) TDHGameplay *gameplay;
 
 @end
