@@ -9,6 +9,7 @@
 #import "TDHFlipsideViewController.h"
 
 @interface TDHFlipsideViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *mistakesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wordLengthLabel;
 @property (weak, nonatomic) IBOutlet UISlider *mistakeSlider;

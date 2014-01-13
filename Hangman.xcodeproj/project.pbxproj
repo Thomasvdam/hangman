@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC21883FFD900D5D4DD /* TDHGameplay.m */; };
+		25205FC51884041900D5D4DD /* GameplayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC41884041900D5D4DD /* GameplayTests.m */; };
+		25205FC718841A9F00D5D4DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */; };
+		25205FCA18841B7C00D5D4DD /* TDHSQLiteDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC918841B7C00D5D4DD /* TDHSQLiteDBManager.m */; };
+		25205FCC1884346200D5D4DD /* wordList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25205FCB1884346200D5D4DD /* wordList.sqlite */; };
 		25E58F79187ED438008BAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F78187ED438008BAA37 /* Foundation.framework */; };
 		25E58F7B187ED438008BAA37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7A187ED438008BAA37 /* CoreGraphics.framework */; };
 		25E58F7D187ED438008BAA37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7C187ED438008BAA37 /* UIKit.framework */; };
@@ -35,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25205FC11883FFD900D5D4DD /* TDHGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHGameplay.h; sourceTree = "<group>"; };
+		25205FC21883FFD900D5D4DD /* TDHGameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHGameplay.m; sourceTree = "<group>"; };
+		25205FC41884041900D5D4DD /* GameplayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayTests.m; sourceTree = "<group>"; };
+		25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		25205FC818841B7C00D5D4DD /* TDHSQLiteDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHSQLiteDBManager.h; sourceTree = "<group>"; };
+		25205FC918841B7C00D5D4DD /* TDHSQLiteDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHSQLiteDBManager.m; sourceTree = "<group>"; };
+		25205FCB1884346200D5D4DD /* wordList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = wordList.sqlite; sourceTree = "<group>"; };
 		25E58F75187ED438008BAA37 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E58F78187ED438008BAA37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25E58F7A187ED438008BAA37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25205FC718841A9F00D5D4DD /* libsqlite3.0.dylib in Frameworks */,
 				25E58F7B187ED438008BAA37 /* CoreGraphics.framework in Frameworks */,
 				25E58F7D187ED438008BAA37 /* UIKit.framework in Frameworks */,
 				25E58F79187ED438008BAA37 /* Foundation.framework in Frameworks */,
@@ -87,6 +100,7 @@
 		25E58F6C187ED437008BAA37 = {
 			isa = PBXGroup;
 			children = (
+				25205FCB1884346200D5D4DD /* wordList.sqlite */,
 				25E58FB018804A54008BAA37 /* README.md */,
 				25E58FB218804BED008BAA37 /* README.md */,
 				25E58F7E187ED438008BAA37 /* Hangman */,
@@ -108,6 +122,7 @@
 		25E58F77187ED438008BAA37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */,
 				25E58F78187ED438008BAA37 /* Foundation.framework */,
 				25E58F7A187ED438008BAA37 /* CoreGraphics.framework */,
 				25E58F7C187ED438008BAA37 /* UIKit.framework */,
@@ -126,6 +141,10 @@
 				25E58F8E187ED438008BAA37 /* TDHMainViewController.m */,
 				25E58F90187ED438008BAA37 /* TDHFlipsideViewController.h */,
 				25E58F91187ED438008BAA37 /* TDHFlipsideViewController.m */,
+				25205FC11883FFD900D5D4DD /* TDHGameplay.h */,
+				25205FC21883FFD900D5D4DD /* TDHGameplay.m */,
+				25205FC818841B7C00D5D4DD /* TDHSQLiteDBManager.h */,
+				25205FC918841B7C00D5D4DD /* TDHSQLiteDBManager.m */,
 				25E58F93187ED438008BAA37 /* Images.xcassets */,
 				25E58F7F187ED438008BAA37 /* Supporting Files */,
 			);
@@ -147,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				25E58FA6187ED438008BAA37 /* HangmanTests.m */,
+				25205FC41884041900D5D4DD /* GameplayTests.m */,
 				25E58FA1187ED438008BAA37 /* Supporting Files */,
 			);
 			path = HangmanTests;
@@ -241,6 +261,7 @@
 				25E58F94187ED438008BAA37 /* Images.xcassets in Resources */,
 				25E58F83187ED438008BAA37 /* InfoPlist.strings in Resources */,
 				25E58F8C187ED438008BAA37 /* Main.storyboard in Resources */,
+				25205FCC1884346200D5D4DD /* wordList.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25205FCA18841B7C00D5D4DD /* TDHSQLiteDBManager.m in Sources */,
 				25E58F85187ED438008BAA37 /* main.m in Sources */,
 				25E58F92187ED438008BAA37 /* TDHFlipsideViewController.m in Sources */,
+				25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */,
 				25E58F89187ED438008BAA37 /* TDHAppDelegate.m in Sources */,
 				25E58F8F187ED438008BAA37 /* TDHMainViewController.m in Sources */,
 			);
@@ -271,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E58FA7187ED438008BAA37 /* HangmanTests.m in Sources */,
+				25205FC51884041900D5D4DD /* GameplayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

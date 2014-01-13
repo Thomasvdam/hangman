@@ -10,6 +10,8 @@
 
 @interface TDHMainViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+
 @end
 
 @implementation TDHMainViewController
@@ -17,7 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    self.mainLabel.text = self.gameplay.pickedWord;
 }
 
 - (void)didReceiveMemoryWarning

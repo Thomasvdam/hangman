@@ -23,7 +23,7 @@ I intend to parse the words.plist file and add the contents to a sqlite database
         4. The score of the current state of the game.
    The gameplay model should implement the following public methods:
         1. + (id)newGameWithWordLength:(int)wordLength mistakes:(int)mistakes score:(int)score;
-        2. + (id)newGameWithWord:(NSString *)word usedLetters:(NSSet *)letters guessesRemaining:(int)remaining;
+        2. + (id)resumeGameWithWord:(NSString *)word usedLetters:(NSSet *)letters guessesRemaining:(int)remaining;
         3. - (BOOL)input:(NSString *)letter;
    And some private methods that might prove useful:
         1. - (?)win;
