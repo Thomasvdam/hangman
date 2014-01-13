@@ -26,7 +26,6 @@
 		25E58F9C187ED438008BAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F78187ED438008BAA37 /* Foundation.framework */; };
 		25E58F9D187ED438008BAA37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7C187ED438008BAA37 /* UIKit.framework */; };
 		25E58FA5187ED438008BAA37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25E58FA3187ED438008BAA37 /* InfoPlist.strings */; };
-		25E58FA7187ED438008BAA37 /* HangmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E58FA6187ED438008BAA37 /* HangmanTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +66,6 @@
 		25E58F9A187ED438008BAA37 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		25E58FA2187ED438008BAA37 /* HangmanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HangmanTests-Info.plist"; sourceTree = "<group>"; };
 		25E58FA4187ED438008BAA37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		25E58FA6187ED438008BAA37 /* HangmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HangmanTests.m; sourceTree = "<group>"; };
 		25E58FB018804A54008BAA37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		25E58FB218804BED008BAA37 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = doc/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,7 +163,6 @@
 		25E58FA0187ED438008BAA37 /* HangmanTests */ = {
 			isa = PBXGroup;
 			children = (
-				25E58FA6187ED438008BAA37 /* HangmanTests.m */,
 				25205FC41884041900D5D4DD /* GameplayTests.m */,
 				25E58FA1187ED438008BAA37 /* Supporting Files */,
 			);
@@ -293,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E58FA7187ED438008BAA37 /* HangmanTests.m in Sources */,
 				25205FC51884041900D5D4DD /* GameplayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
