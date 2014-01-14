@@ -12,6 +12,7 @@
 		25205FC718841A9F00D5D4DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */; };
 		25205FCA18841B7C00D5D4DD /* TDHWordPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC918841B7C00D5D4DD /* TDHWordPicker.m */; };
 		25205FCC1884346200D5D4DD /* wordList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25205FCB1884346200D5D4DD /* wordList.sqlite */; };
+		25205FCF188538A600D5D4DD /* TDHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FCE188538A600D5D4DD /* TDHConstants.m */; };
 		25E58F79187ED438008BAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F78187ED438008BAA37 /* Foundation.framework */; };
 		25E58F7B187ED438008BAA37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7A187ED438008BAA37 /* CoreGraphics.framework */; };
 		25E58F7D187ED438008BAA37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7C187ED438008BAA37 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		25205FC818841B7C00D5D4DD /* TDHWordPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHWordPicker.h; sourceTree = "<group>"; };
 		25205FC918841B7C00D5D4DD /* TDHWordPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHWordPicker.m; sourceTree = "<group>"; };
 		25205FCB1884346200D5D4DD /* wordList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = wordList.sqlite; path = ../wordList.sqlite; sourceTree = "<group>"; };
+		25205FCD1885381D00D5D4DD /* TDHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHConstants.h; sourceTree = "<group>"; };
+		25205FCE188538A600D5D4DD /* TDHConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHConstants.m; sourceTree = "<group>"; };
 		25E58F75187ED438008BAA37 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E58F78187ED438008BAA37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25E58F7A187ED438008BAA37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 				25205FC21883FFD900D5D4DD /* TDHGameplay.m */,
 				25205FC818841B7C00D5D4DD /* TDHWordPicker.h */,
 				25205FC918841B7C00D5D4DD /* TDHWordPicker.m */,
+				25205FCD1885381D00D5D4DD /* TDHConstants.h */,
+				25205FCE188538A600D5D4DD /* TDHConstants.m */,
 				25E58F93187ED438008BAA37 /* Images.xcassets */,
 				25E58F7F187ED438008BAA37 /* Supporting Files */,
 			);
@@ -281,6 +286,7 @@
 				25E58F85187ED438008BAA37 /* main.m in Sources */,
 				25E58F92187ED438008BAA37 /* TDHFlipsideViewController.m in Sources */,
 				25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */,
+				25205FCF188538A600D5D4DD /* TDHConstants.m in Sources */,
 				25E58F89187ED438008BAA37 /* TDHAppDelegate.m in Sources */,
 				25E58F8F187ED438008BAA37 /* TDHMainViewController.m in Sources */,
 			);

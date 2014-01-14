@@ -40,7 +40,7 @@
 - (NSString*)findDatabasePath {
     NSArray *Paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *DocumentDir = [Paths objectAtIndex:0];
-    return [DocumentDir stringByAppendingPathComponent:@"wordList.sqlite"];
+    return [DocumentDir stringByAppendingPathComponent:WORD_LIST_DB];
 }
 
 /*****
@@ -51,7 +51,7 @@
     BOOL success;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     success = [fileManager fileExistsAtPath:[self findDatabasePath]];
-    NSString *FileDB = [[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:@"wordList.sqlite"];
+    NSString *FileDB = [[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:WORD_LIST_DB];
     
     if (success) {
         NSLog(@"File Exist");
