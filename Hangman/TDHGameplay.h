@@ -10,7 +10,7 @@
 
 @interface TDHGameplay : NSObject
 
-@property (readonly) NSString *pickedWord;
+@property (readonly) NSString *display;
 @property (readonly) int mistakes;
 @property (readonly) NSMutableSet *unusedLetters;
 @property (readonly) int score;
@@ -18,6 +18,6 @@
 + (id)newGameWithWordLength:(int)wordLength mistakes:(int)mistakes;
 + (id)resumeGameWithWord:(NSString *)word unusedLetters:(NSMutableSet *)unusedLetters mistakesRemaining:(int)mistakes score:(int)score;
 
-- (BOOL)input:(NSString *)letter;
+- (BOOL)input:(char)letter;
 
 @end

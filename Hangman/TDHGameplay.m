@@ -11,6 +11,7 @@
 
 @interface TDHGameplay ()
 
+@property (readwrite) NSString *display;
 @property (readwrite) NSString *pickedWord;
 @property (readwrite) int mistakes;
 @property (readwrite) NSMutableSet *unusedLetters;
@@ -32,6 +33,7 @@
     if (self) {
         TDHWordPicker *wordPicker = [[TDHWordPicker alloc] init];
         self.pickedWord = [wordPicker pickWordWith:wordLength];
+        self.display = [self.pickedWord stringByReplacingCharactersInRange: withString:@"-"];
         self.mistakes = mistakes;
         self.unusedLetters = [self initiateLetters];
         self.score = 1; // TODO!
@@ -63,7 +65,8 @@
 /*****
  * TODO.
  *****/
-- (BOOL)input:(NSString *)letter {
+- (BOOL)input:(char)letter {
+    NSLog(@"I'm working! Char: %c", letter);
     return false;
 }
 

@@ -11,6 +11,7 @@
 @interface TDHMainViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+@property (weak, nonatomic) IBOutlet UITextField *mainTextField;
 
 @end
 
@@ -20,7 +21,8 @@
 {
     [super viewDidLoad];
 	
-    self.mainLabel.text = self.gameplay.pickedWord;
+    self.mainLabel.text = self.gameplay.display;
+    [self.mainTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,11 +31,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)textFieldInput:(id)sender {
+    UITextField *textField = (UITextField *)sender;
+    char inputChar = [[textField.text capitalizedString] characterAtIndex:0];
+    
+    // Check whether the character is a capital letter.
+    if (('A' <= inputChar) && (inputChar <= 'Z')) {
+        [self.gameplay input:inputChar];
+    }
+    
+    [textField setText:@""];
+}
+
 #pragma mark - Flipside View
 
 - (void)flipsideViewControllerDidFinish:(TDHFlipsideViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.mainTextField becomeFirstResponder];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

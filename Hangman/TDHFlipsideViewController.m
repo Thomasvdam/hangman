@@ -34,9 +34,12 @@
     [self.wordLengthSlider setValue:wordLengthVal];
     self.wordLengthLabel.text = [NSString stringWithFormat:@"%d", wordLengthVal];
     
-	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
+/*****
+ * Upon changing the value of the mistakesSlider, update the label and user defaults accordingly.
+ *****/
 - (IBAction)mistakeSliderChanged:(id)sender {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -52,6 +55,9 @@
     [defaults synchronize];
 }
 
+/*****
+ * Upon changing the value of the wordLengthSlider, update the label and user defaults accordingly.
+ *****/
 - (IBAction)wordLengthSliderChanged:(id)sender {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
