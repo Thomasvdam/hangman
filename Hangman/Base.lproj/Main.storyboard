@@ -31,14 +31,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afv-g3-Pa3">
-                                <rect key="frame" x="139" y="85" width="42" height="20"/>
+                                <rect key="frame" x="20" y="85" width="280" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -56,11 +56,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="afv-g3-Pa3" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="65" id="0zf-T1-tGg"/>
                             <constraint firstItem="jqg-sy-dxO" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="15" id="Cqg-vC-bcG"/>
-                            <constraint firstAttribute="trailing" secondItem="afv-g3-Pa3" secondAttribute="trailing" constant="139" id="M6h-Iv-Vyt"/>
                             <constraint firstItem="jqg-sy-dxO" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="a80-Q0-5A9"/>
-                            <constraint firstItem="afv-g3-Pa3" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="139" id="h5O-o6-1l1"/>
+                            <constraint firstAttribute="trailing" secondItem="afv-g3-Pa3" secondAttribute="trailing" constant="20" id="btr-HV-tXW"/>
+                            <constraint firstItem="afv-g3-Pa3" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="65" id="syl-mh-V7S"/>
+                            <constraint firstItem="afv-g3-Pa3" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="y6J-l3-ieX"/>
                         </constraints>
                     </view>
                     <connections>

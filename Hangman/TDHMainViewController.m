@@ -31,16 +31,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*****
+ * Immediately upon pressing a key check whether it was a valid character,
+ * convert it to uppercase, pass it to the model, and update the view.
+ * Afterwards clear the textfield so the next keypress will be registered 
+ * as a single character as well.
+ ****/
 - (IBAction)textFieldInput:(id)sender {
     UITextField *textField = (UITextField *)sender;
+    
+    // Capitalise the character and check whether it is a letter.
     char inputChar = [[textField.text capitalizedString] characterAtIndex:0];
-    
-    // Check whether the character is a capital letter.
     if (('A' <= inputChar) && (inputChar <= 'Z')) {
-        [self.gameplay input:inputChar];
+        [self updateViewWithMessage:[self.gameplay input:inputChar]];
     }
-    
+
     [textField setText:@""];
+}
+
+/*****
+ * Update the view with the new values of the model, plus the string with
+ * feedback for the user.
+ ****/
+- (void)updateViewWithMessage:(NSString *)message {
+    self.mainLabel.text = self.gameplay.display;
 }
 
 #pragma mark - Flipside View

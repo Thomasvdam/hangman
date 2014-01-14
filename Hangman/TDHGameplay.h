@@ -18,6 +18,8 @@
 + (id)newGameWithWordLength:(int)wordLength mistakes:(int)mistakes;
 + (id)resumeGameWithWord:(NSString *)word unusedLetters:(NSMutableSet *)unusedLetters mistakesRemaining:(int)mistakes score:(int)score;
 
-- (BOOL)input:(char)letter;
++ (id)newTestGame;
+
+- (NSString *)input:(char)letter;
 
 @end
