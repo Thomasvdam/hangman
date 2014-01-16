@@ -10,5 +10,6 @@
 #define Hangman_TDHConstants_h
 
 FOUNDATION_EXPORT NSString *const WORD_LIST_DB;
+FOUNDATION_EXPORT NSString *const HIGH_SCORE_DB;
 
 #endif

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25174B421887DFD700F28FB3 /* wordList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25174B411887DFD700F28FB3 /* wordList.sqlite */; };
+		25174B451887F8CF00F28FB3 /* TDHDatabaseConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 25174B441887F8CF00F28FB3 /* TDHDatabaseConnector.m */; };
 		25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC21883FFD900D5D4DD /* TDHGameplay.m */; };
 		25205FC51884041900D5D4DD /* GameplayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC41884041900D5D4DD /* GameplayTests.m */; };
 		25205FC718841A9F00D5D4DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		25174B411887DFD700F28FB3 /* wordList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = wordList.sqlite; sourceTree = "<group>"; };
+		25174B431887F8CF00F28FB3 /* TDHDatabaseConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHDatabaseConnector.h; sourceTree = "<group>"; };
+		25174B441887F8CF00F28FB3 /* TDHDatabaseConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHDatabaseConnector.m; sourceTree = "<group>"; };
 		25205FC11883FFD900D5D4DD /* TDHGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHGameplay.h; sourceTree = "<group>"; };
 		25205FC21883FFD900D5D4DD /* TDHGameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHGameplay.m; sourceTree = "<group>"; };
 		25205FC41884041900D5D4DD /* GameplayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayTests.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				25205FC21883FFD900D5D4DD /* TDHGameplay.m */,
 				25205FC818841B7C00D5D4DD /* TDHWordPicker.h */,
 				25205FC918841B7C00D5D4DD /* TDHWordPicker.m */,
+				25174B431887F8CF00F28FB3 /* TDHDatabaseConnector.h */,
+				25174B441887F8CF00F28FB3 /* TDHDatabaseConnector.m */,
 				25205FCD1885381D00D5D4DD /* TDHConstants.h */,
 				25205FCE188538A600D5D4DD /* TDHConstants.m */,
 				25E58F93187ED438008BAA37 /* Images.xcassets */,
@@ -283,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25205FCA18841B7C00D5D4DD /* TDHWordPicker.m in Sources */,
+				25174B451887F8CF00F28FB3 /* TDHDatabaseConnector.m in Sources */,
 				25E58F85187ED438008BAA37 /* main.m in Sources */,
 				25E58F92187ED438008BAA37 /* TDHFlipsideViewController.m in Sources */,
 				25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */,

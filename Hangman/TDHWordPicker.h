@@ -7,14 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <sqlite3.h>
+#import "TDHDatabaseConnector.h"
 
-@interface TDHWordPicker : NSObject
-
-@property (strong) NSString *databasePath;
-@property sqlite3 *database;
-
-- (id)init;
+@interface TDHWordPicker : TDHDatabaseConnector
 
 - (NSString *)pickWordWith:(int)size;
 

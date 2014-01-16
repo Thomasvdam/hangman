@@ -7,3 +7,4 @@
 //
 
 NSString *const WORD_LIST_DB = @"wordList.sqlite";
+NSString *const HIGH_SCORE_DB = @"highscores.sqlite";

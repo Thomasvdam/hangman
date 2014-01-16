@@ -33,7 +33,7 @@
     self = [super init];
     
     if (self) {
-        TDHWordPicker *wordPicker = [[TDHWordPicker alloc] init];
+        TDHWordPicker *wordPicker = [[TDHWordPicker alloc] initWithDatabaseName:WORD_LIST_DB];
         self.pickedWord = [wordPicker pickWordWith:wordLength];
         self.mistakes = mistakes;
         self.unusedLetters = [self initiateUnusedLetters];
