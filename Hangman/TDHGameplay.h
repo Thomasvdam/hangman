@@ -21,5 +21,6 @@
 + (id)newTestGame;
 
 - (NSString *)input:(char)letter;
+- (void)saveGame;
 
 @end

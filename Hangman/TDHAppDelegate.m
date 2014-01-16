@@ -31,8 +31,16 @@
         [defaults setBool:YES forKey:@"firstRun"];
     }
     
-    // Initiate a new gameplay object and pass the reference to the main view controller.
-    self.gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
+    // Initiate a gameplay object and pass the reference to the main view controller.
+    if(![defaults boolForKey:@"inProgress"]) {
+        self.gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
+        [defaults setBool:YES forKey:@"inProgress"];
+    } else {
+        self.gameplay = [TDHGameplay resumeGameWithWord:[defaults stringForKey:@"pickedWord"] unusedLetters:[NSMutableSet setWithArray:[defaults arrayForKey:@"unusedLetters"]] mistakesRemaining:[defaults integerForKey:@"mistakes"] score:[defaults integerForKey:@"score"]];
+    }
+    
+    [defaults synchronize];
+    
     TDHMainViewController *mainView = (TDHMainViewController *)self.window.rootViewController;
     mainView.gameplay = self.gameplay;
     
@@ -43,6 +51,12 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults boolForKey:@"inProgress"]) {
+        [self.gameplay saveGame];
+    }
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

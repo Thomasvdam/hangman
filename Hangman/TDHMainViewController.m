@@ -11,6 +11,7 @@
 @interface TDHMainViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
 @property (weak, nonatomic) IBOutlet UITextField *mainTextField;
 
 @end
@@ -55,6 +56,7 @@
  ****/
 - (void)updateViewWithMessage:(NSString *)message {
     self.mainLabel.text = self.gameplay.display;
+    self.feedbackLabel.text = message;
 }
 
 #pragma mark - Flipside View

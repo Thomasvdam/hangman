@@ -53,17 +53,35 @@
                                     <action selector="textFieldInput:" destination="rQl-PL-IFJ" eventType="editingChanged" id="Txf-sd-5zC"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbA-Nt-vA0">
+                                <rect key="frame" x="20" y="138" width="280" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RbA-Nt-vA0" secondAttribute="trailing" constant="20" id="8SK-SQ-pP2"/>
+                            <constraint firstItem="RbA-Nt-vA0" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="9D9-rb-T7R"/>
                             <constraint firstItem="jqg-sy-dxO" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="15" id="Cqg-vC-bcG"/>
                             <constraint firstItem="jqg-sy-dxO" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="a80-Q0-5A9"/>
                             <constraint firstAttribute="trailing" secondItem="afv-g3-Pa3" secondAttribute="trailing" constant="20" id="btr-HV-tXW"/>
+                            <constraint firstItem="RbA-Nt-vA0" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="118" id="gmZ-UE-Oo7"/>
                             <constraint firstItem="afv-g3-Pa3" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="65" id="syl-mh-V7S"/>
                             <constraint firstItem="afv-g3-Pa3" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="y6J-l3-ieX"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="feedbackLabel" destination="RbA-Nt-vA0" id="IkO-AJ-XnA"/>
                         <outlet property="mainLabel" destination="afv-g3-Pa3" id="iaI-jD-v9T"/>
                         <outlet property="mainTextField" destination="aai-W3-0tE" id="j4Y-Km-ncV"/>
                     </connections>

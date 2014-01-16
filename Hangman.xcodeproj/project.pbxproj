@@ -138,9 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				25174B411887DFD700F28FB3 /* wordList.sqlite */,
+				25E58F8A187ED438008BAA37 /* Main.storyboard */,
 				25E58F87187ED438008BAA37 /* TDHAppDelegate.h */,
 				25E58F88187ED438008BAA37 /* TDHAppDelegate.m */,
-				25E58F8A187ED438008BAA37 /* Main.storyboard */,
 				25E58F8D187ED438008BAA37 /* TDHMainViewController.h */,
 				25E58F8E187ED438008BAA37 /* TDHMainViewController.m */,
 				25E58F90187ED438008BAA37 /* TDHFlipsideViewController.h */,
