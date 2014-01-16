@@ -102,7 +102,9 @@
             } else {
                 NSLog(@"[SQLITE] UNKNOWN DATATYPE");
             }
-            [result addObject:value];
+            if (value) {
+                [result addObject:value];
+            }
         }
         return result;
     }

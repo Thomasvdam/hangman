@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25174B421887DFD700F28FB3 /* wordList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25174B411887DFD700F28FB3 /* wordList.sqlite */; };
 		25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC21883FFD900D5D4DD /* TDHGameplay.m */; };
 		25205FC51884041900D5D4DD /* GameplayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC41884041900D5D4DD /* GameplayTests.m */; };
 		25205FC718841A9F00D5D4DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */; };
 		25205FCA18841B7C00D5D4DD /* TDHWordPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC918841B7C00D5D4DD /* TDHWordPicker.m */; };
-		25205FCC1884346200D5D4DD /* wordList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25205FCB1884346200D5D4DD /* wordList.sqlite */; };
 		25205FCF188538A600D5D4DD /* TDHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FCE188538A600D5D4DD /* TDHConstants.m */; };
 		25E58F79187ED438008BAA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F78187ED438008BAA37 /* Foundation.framework */; };
 		25E58F7B187ED438008BAA37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E58F7A187ED438008BAA37 /* CoreGraphics.framework */; };
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25174B411887DFD700F28FB3 /* wordList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = wordList.sqlite; sourceTree = "<group>"; };
 		25205FC11883FFD900D5D4DD /* TDHGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHGameplay.h; sourceTree = "<group>"; };
 		25205FC21883FFD900D5D4DD /* TDHGameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHGameplay.m; sourceTree = "<group>"; };
 		25205FC41884041900D5D4DD /* GameplayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayTests.m; sourceTree = "<group>"; };
 		25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		25205FC818841B7C00D5D4DD /* TDHWordPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHWordPicker.h; sourceTree = "<group>"; };
 		25205FC918841B7C00D5D4DD /* TDHWordPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHWordPicker.m; sourceTree = "<group>"; };
-		25205FCB1884346200D5D4DD /* wordList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = wordList.sqlite; path = ../wordList.sqlite; sourceTree = "<group>"; };
 		25205FCD1885381D00D5D4DD /* TDHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHConstants.h; sourceTree = "<group>"; };
 		25205FCE188538A600D5D4DD /* TDHConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHConstants.m; sourceTree = "<group>"; };
 		25E58F75187ED438008BAA37 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +134,7 @@
 		25E58F7E187ED438008BAA37 /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
-				25205FCB1884346200D5D4DD /* wordList.sqlite */,
+				25174B411887DFD700F28FB3 /* wordList.sqlite */,
 				25E58F87187ED438008BAA37 /* TDHAppDelegate.h */,
 				25E58F88187ED438008BAA37 /* TDHAppDelegate.m */,
 				25E58F8A187ED438008BAA37 /* Main.storyboard */,
@@ -261,9 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E58F94187ED438008BAA37 /* Images.xcassets in Resources */,
+				25174B421887DFD700F28FB3 /* wordList.sqlite in Resources */,
 				25E58F83187ED438008BAA37 /* InfoPlist.strings in Resources */,
 				25E58F8C187ED438008BAA37 /* Main.storyboard in Resources */,
-				25205FCC1884346200D5D4DD /* wordList.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

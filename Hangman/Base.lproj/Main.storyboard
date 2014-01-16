@@ -103,7 +103,7 @@
                                     <action selector="mistakeSliderChanged:" destination="kIf-nA-PKG" eventType="valueChanged" id="av4-ma-9x9"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="zJX-vI-mEJ">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="zJX-vI-mEJ">
                                 <rect key="frame" x="18" y="231" width="118" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
