@@ -57,7 +57,24 @@
                                 <rect key="frame" x="20" y="138" width="280" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Label">
+                                    <fragment content="    ">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THV-H5-d78">
+                                <rect key="frame" x="118" y="36" width="182" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="7Va-P9-2O1"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Mistakes remaining: 26">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -73,6 +90,9 @@
                             <constraint firstAttribute="trailing" secondItem="RbA-Nt-vA0" secondAttribute="trailing" constant="20" id="8SK-SQ-pP2"/>
                             <constraint firstItem="RbA-Nt-vA0" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="9D9-rb-T7R"/>
                             <constraint firstItem="jqg-sy-dxO" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="15" id="Cqg-vC-bcG"/>
+                            <constraint firstItem="THV-H5-d78" firstAttribute="centerY" secondItem="jqg-sy-dxO" secondAttribute="centerY" id="TWU-hT-Wfc"/>
+                            <constraint firstItem="THV-H5-d78" firstAttribute="bottom" secondItem="jqg-sy-dxO" secondAttribute="bottom" id="XJ9-xz-5j4"/>
+                            <constraint firstItem="THV-H5-d78" firstAttribute="trailing" secondItem="afv-g3-Pa3" secondAttribute="trailing" id="Y88-EK-r0h"/>
                             <constraint firstItem="jqg-sy-dxO" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leading" constant="20" id="a80-Q0-5A9"/>
                             <constraint firstAttribute="trailing" secondItem="afv-g3-Pa3" secondAttribute="trailing" constant="20" id="btr-HV-tXW"/>
                             <constraint firstItem="RbA-Nt-vA0" firstAttribute="top" secondItem="LOq-BC-I5L" secondAttribute="bottom" constant="118" id="gmZ-UE-Oo7"/>
@@ -84,11 +104,54 @@
                         <outlet property="feedbackLabel" destination="RbA-Nt-vA0" id="IkO-AJ-XnA"/>
                         <outlet property="mainLabel" destination="afv-g3-Pa3" id="iaI-jD-v9T"/>
                         <outlet property="mainTextField" destination="aai-W3-0tE" id="j4Y-Km-ncV"/>
+                        <outlet property="mistakesLabel" destination="THV-H5-d78" id="mR5-Qg-e9h"/>
+                        <segue destination="fpu-TT-9Oe" kind="modal" identifier="showHighscores" id="Ooi-Uq-1hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4L-l5-tyG" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-51" y="182"/>
+        </scene>
+        <!--Highscore View Controller-->
+        <scene sceneID="TwA-vG-Dce">
+            <objects>
+                <tableViewController id="fpu-TT-9Oe" customClass="TDHHighscoreViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g6P-Mj-Llu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="pA9-Pp-EmR">
+                            <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="kao-vd-4RJ">
+                                    <barButtonItem key="leftBarButtonItem" title="Done" id="6ZE-uJ-ZI1">
+                                        <connections>
+                                            <action selector="done:" destination="fpu-TT-9Oe" id="FrB-WB-iXp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Z8b-5j-K2Z">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z8b-5j-K2Z" id="QkT-yi-itJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fpu-TT-9Oe" id="aGZ-6w-oRc"/>
+                            <outlet property="delegate" destination="fpu-TT-9Oe" id="eMN-t3-RUO"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWz-Cf-TeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="-134"/>
         </scene>
         <!--Flipside View Controller-->
         <scene sceneID="z9J-Vg-hzE">
@@ -218,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlJ-1o-FvB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368" y="182"/>
+            <point key="canvasLocation" x="492" y="554"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

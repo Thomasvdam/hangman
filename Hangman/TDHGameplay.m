@@ -12,7 +12,7 @@
 @interface TDHGameplay ()
 
 @property (readwrite) NSString *display;
-@property NSString *pickedWord;
+@property (readwrite) NSString *pickedWord;
 @property (readwrite) int mistakes;
 @property (readwrite) NSMutableSet *unusedLetters;
 @property NSMutableSet *unusedLettersInWord;
@@ -137,7 +137,7 @@
 /*****
  * TODO.
  *****/
-- (NSString *)input:(char)letter {
+- (int)input:(char)letter {
 
     NSString *guess = [NSString stringWithFormat:@"%c", letter];
     
@@ -149,16 +149,17 @@
         if ([self.unusedLettersInWord count] == 0) {
             // Win game.
             [self.defaults setBool:NO forKey:@"inProgress"];
-            NSLog(@"YAY");
+            [self.defaults synchronize];
+            return 4;
         }
         
         [self.unusedLetters removeObject:guess];
         self.display = [self maskWord:self.pickedWord withSet:self.unusedLettersInWord];
-        return @"Correct!";
+        return 1;
     }
     else if (![self.unusedLetters containsObject:guess]) {
         // If the letter has been guessed previously inform the player.
-        return @"You already guessed this letter.";
+        return 3;
     }
     // Else the user must have guessed a wrong letter so remove it from the list and tally a mistake.
     [self.unusedLetters removeObject:guess];
@@ -168,10 +169,11 @@
     if (self.mistakes == 0) {
         // Lose game.
         [self.defaults setBool:NO forKey:@"inProgress"];
-        NSLog(@"BOO");
+        [self.defaults synchronize];
+        return 5;
     }
     
-    return @"Wrong!";
+    return 2;
 }
 
 - (void)saveGame {

@@ -38,7 +38,7 @@
 }
 
 /*****
- * Upon changing the value of the mistakesSlider, update the label and user defaults accordingly.
+ * Upon changing the value of the mistakeSlider, update the label and user defaults accordingly.
  *****/
 - (IBAction)mistakeSliderChanged:(id)sender {
     

@@ -10,12 +10,6 @@
 #import "TDHGameplay.h"
 #import "TDHMainViewController.h"
 
-@interface TDHAppDelegate ()
-
-@property TDHGameplay *gameplay;
-
-@end
-
 @implementation TDHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -29,21 +23,9 @@
         [defaults setInteger:4 forKey:@"wordLengthVal"];
         // 'Save'.
         [defaults setBool:YES forKey:@"firstRun"];
+        [defaults synchronize];
     }
-    
-    // Initiate a gameplay object and pass the reference to the main view controller.
-    if(![defaults boolForKey:@"inProgress"]) {
-        self.gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
-        [defaults setBool:YES forKey:@"inProgress"];
-    } else {
-        self.gameplay = [TDHGameplay resumeGameWithWord:[defaults stringForKey:@"pickedWord"] unusedLetters:[NSMutableSet setWithArray:[defaults arrayForKey:@"unusedLetters"]] mistakesRemaining:[defaults integerForKey:@"mistakes"] score:[defaults integerForKey:@"score"]];
-    }
-    
-    [defaults synchronize];
-    
-    TDHMainViewController *mainView = (TDHMainViewController *)self.window.rootViewController;
-    mainView.gameplay = self.gameplay;
-    
+
     return YES;
 }
 							
@@ -55,7 +37,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults boolForKey:@"inProgress"]) {
-        [self.gameplay saveGame];
+        TDHMainViewController *mainView = (TDHMainViewController *)self.window.rootViewController;
+        [mainView.gameplay saveGame];
     }
 }
 

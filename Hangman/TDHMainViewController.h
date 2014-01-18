@@ -7,10 +7,11 @@
 //
 
 #import "TDHFlipsideViewController.h"
+#import "TDHHighscoreViewController.h"
 #import "TDHGameplay.h"
 
 @interface TDHMainViewController : UIViewController <TDHFlipsideViewControllerDelegate>
 
-@property (weak) TDHGameplay *gameplay;
+@property TDHGameplay *gameplay;
 
 @end

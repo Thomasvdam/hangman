@@ -38,7 +38,6 @@
     
     if (sqlite3_prepare_v2(self.database, sql, -1, &statement, NULL) != SQLITE_OK) {
         NSLog(@"%s SQL error '%s' (%1d)", __FUNCTION__, sqlite3_errmsg(self.database), sqlite3_errcode(self.database));
-        NSLog(@"[SQLITE] Error when preparing query!");
     } else {
         NSMutableArray *result = [NSMutableArray array];
         while (sqlite3_step(statement) == SQLITE_ROW) {
@@ -55,8 +54,14 @@
                 [result addObject:value];
             }
         }
+        // Close the connection to the database to preserve memory.
+        sqlite3_finalize(statement);
+        sqlite3_close(self.database);
         return result;
     }
+    
+    sqlite3_finalize(statement);
+    sqlite3_close(self.database);
     return nil;
 }
 
