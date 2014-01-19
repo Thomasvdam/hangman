@@ -146,7 +146,9 @@
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     } else if ([[segue identifier] isEqualToString:@"showHighscores"]) {
-        [[segue destinationViewController] setDelegate:self];
+        NSArray *temp = [[segue destinationViewController] childViewControllers];
+        TDHHighscoreViewController *highscoresView = (TDHHighscoreViewController *)[temp objectAtIndex:0];
+        [highscoresView setDelegate:self];
     }
 }
 

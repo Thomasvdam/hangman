@@ -27,11 +27,8 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    TDHHighscores *highscoresModel = [[TDHHighscores alloc] initWithDatabaseName:HIGH_SCORE_DB];
+    self.highscores = [highscoresModel getHighscores];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +48,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.highscores count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,10 +56,13 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSArray *highscore = [self.highscores objectAtIndex:indexPath.row];
+    cell.textLabel.text = highscore[2];
     
     return cell;
 }
+
+#pragma mark - done
 
 - (IBAction)done:(id)sender
 {

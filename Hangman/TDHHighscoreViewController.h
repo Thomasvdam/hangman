@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TDHMainViewController.h"
+#import "TDHHighscores.h"
 
 @class TDHHighscoreViewController;
 
@@ -18,5 +19,6 @@
 @interface TDHHighscoreViewController : UITableViewController
 
 @property (weak, nonatomic) id <TDHHighscoreViewControllerDelegate> delegate;
+@property NSArray *highscores;
 
 @end
