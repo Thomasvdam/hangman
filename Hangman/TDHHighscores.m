@@ -10,58 +10,34 @@
 
 @implementation TDHHighscores
 
-- (BOOL)saveHighscore:(int)score mistakesMade:(int)mistakes withWord:(NSString *)word {
-    // Find the lowest score in the database.
+/*****
+ * Save the score and word in the database.
+ *****/
+- (BOOL)saveHighscore:(int)score withWord:(NSString *)word {
     sqlite3_stmt    *statement;
-    NSString *minScore = [NSString stringWithFormat:@" SELECT min(score) FROM scores"];
-    const char *min_stmt = [minScore UTF8String];
-    int min;
-    if(sqlite3_prepare_v2(self.database, min_stmt, -1, &statement, nil) == SQLITE_OK){
-        while (sqlite3_step(statement) == SQLITE_ROW) {
-            min = sqlite3_column_int(statement, 0);
-        }
-        sqlite3_finalize(statement);
+    NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO scores (score, word) VALUES (%i, \"%@\")", score, word];
+    
+    const char *insert_stmt = [insertSQL UTF8String];
+    sqlite3_prepare_v2(self.database, insert_stmt, -1, &statement, NULL);
+    if (sqlite3_step(statement) == SQLITE_DONE) {
+        NSLog(@"Highscore saved.");
     } else {
-        return false;
+        NSLog(@"Highscore not saved.");
     }
+    sqlite3_finalize(statement);
     
-    // Save the score if it is higher than the lowest highscore.
-    if (score > min) {
-    
-        NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO scores (score, mistakes, word) VALUES (%i, %i, \"%@\")", score, mistakes, word];
-        
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(self.database, insert_stmt, -1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE) {
-            NSLog(@"Highscore saved.");
-        } else {
-            NSLog(@"Highscore not saved.");
-        }
-        sqlite3_finalize(statement);
-
-        // Delete the previous lowest score.
-        NSString *deleteSQL = [NSString stringWithFormat:@"DELETE FROM scores WHERE score = %i)", min];
-        
-        const char *delete_stmt = [deleteSQL UTF8String];
-        sqlite3_prepare_v2(self.database, delete_stmt, -1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE) {
-            NSLog(@"Lowest highscore deleted.");
-        } else {
-            NSLog(@"Lowest highscore not deleted.");
-        }
-        sqlite3_finalize(statement);
-    }
-    
-    sqlite3_close(self.database);
-    return false;
+    return true;
 }
 
+/*****
+ * Return an array containing all the highscores in the database.
+ *****/
 - (NSArray *)getHighscores {
     
     NSMutableArray *highscores = [NSMutableArray arrayWithCapacity:10];
     
     sqlite3_stmt *statement = nil;
-    NSString *query = [NSString stringWithFormat:@"SELECT * FROM scores"];
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM scores ORDER BY score ASC"];
     const char *sql = [query UTF8String];
     
     if (sqlite3_prepare_v2(self.database, sql, -1, &statement, NULL) != SQLITE_OK) {
@@ -73,9 +49,7 @@
             
             NSNumber *score = [NSNumber numberWithInt:sqlite3_column_int(statement, 0)];
             [result addObject:score];
-            NSNumber *mistakes = [NSNumber numberWithInt:sqlite3_column_int(statement, 1)];
-            [result addObject:mistakes];
-            const unsigned char *word = sqlite3_column_text(statement, 2);
+            const unsigned char *word = sqlite3_column_text(statement, 1);
             NSString *wordString = [NSString stringWithFormat:@"%s", word];
             [result addObject:wordString];
             

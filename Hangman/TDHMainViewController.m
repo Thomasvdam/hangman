@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mistakesLabel;
 @property (weak, nonatomic) IBOutlet UITextField *mainTextField;
+@property bool win;
 
 @end
 
@@ -29,6 +30,7 @@
     if(![defaults boolForKey:@"inProgress"]) {
         self.gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
         [defaults setBool:YES forKey:@"inProgress"];
+        [defaults synchronize];
     } else {
         self.gameplay = [TDHGameplay resumeGameWithWord:[defaults stringForKey:@"pickedWord"] unusedLetters:[NSMutableSet setWithArray:[defaults arrayForKey:@"unusedLetters"]] mistakesRemaining:[defaults integerForKey:@"mistakes"] score:[defaults integerForKey:@"score"]];
     }
@@ -61,6 +63,7 @@
         [self updateViewWithMessage:feedback];
         
         if (feedback == 4) {
+            self.win = true;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You won!"
                                                             message:[NSString stringWithFormat:@"Congratulations, the word was indeed %@!", self.gameplay.pickedWord]
                                                            delegate:nil
@@ -69,6 +72,7 @@
             [alert show];
             [self performSegueWithIdentifier:@"showHighscores" sender:self];
         } else if (feedback == 5) {
+            self.win = false;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You lose!"
                                                             message:[NSString stringWithFormat:@"Too bad, the word was %@.", self.gameplay.pickedWord]
                                                            delegate:nil
@@ -124,9 +128,12 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    // Iniate a new game immediately upon returning to the main screen.
     if(![defaults boolForKey:@"inProgress"]) {
         self.gameplay = [TDHGameplay newGameWithWordLength:[defaults integerForKey:@"wordLengthVal"] mistakes:[defaults integerForKey:@"mistakesVal"]];
         [defaults setBool:YES forKey:@"inProgress"];
+        [self.gameplay saveGame];
+        [defaults synchronize];
     }
     
     [self updateViewWithMessage:0];
@@ -149,6 +156,7 @@
         NSArray *temp = [[segue destinationViewController] childViewControllers];
         TDHHighscoreViewController *highscoresView = (TDHHighscoreViewController *)[temp objectAtIndex:0];
         [highscoresView setDelegate:self];
+        highscoresView.result = [NSArray arrayWithObjects:[NSNumber numberWithBool:self.win],[NSNumber numberWithInt:self.gameplay.score], self.gameplay.pickedWord, nil];
     }
 }
 

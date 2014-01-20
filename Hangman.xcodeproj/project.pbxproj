@@ -11,7 +11,7 @@
 		25174B451887F8CF00F28FB3 /* TDHDatabaseConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 25174B441887F8CF00F28FB3 /* TDHDatabaseConnector.m */; };
 		25174B4818895C5000F28FB3 /* TDHHighscoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25174B4718895C5000F28FB3 /* TDHHighscoreViewController.m */; };
 		25174B4B188ACB2000F28FB3 /* TDHHighscores.m in Sources */ = {isa = PBXBuildFile; fileRef = 25174B4A188ACB2000F28FB3 /* TDHHighscores.m */; };
-		25174B4D188ACF7100F28FB3 /* highscores.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25174B4C188ACF7100F28FB3 /* highscores.sqlite */; };
+		25174B4F188D71A500F28FB3 /* highscores.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 25174B4E188D71A500F28FB3 /* highscores.sqlite */; };
 		25205FC31883FFD900D5D4DD /* TDHGameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC21883FFD900D5D4DD /* TDHGameplay.m */; };
 		25205FC51884041900D5D4DD /* GameplayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25205FC41884041900D5D4DD /* GameplayTests.m */; };
 		25205FC718841A9F00D5D4DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25205FC618841A9F00D5D4DD /* libsqlite3.0.dylib */; };
@@ -51,7 +51,7 @@
 		25174B4718895C5000F28FB3 /* TDHHighscoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHHighscoreViewController.m; sourceTree = "<group>"; };
 		25174B49188ACB2000F28FB3 /* TDHHighscores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHHighscores.h; sourceTree = "<group>"; };
 		25174B4A188ACB2000F28FB3 /* TDHHighscores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHHighscores.m; sourceTree = "<group>"; };
-		25174B4C188ACF7100F28FB3 /* highscores.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = highscores.sqlite; sourceTree = "<group>"; };
+		25174B4E188D71A500F28FB3 /* highscores.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = highscores.sqlite; sourceTree = "<group>"; };
 		25205FC11883FFD900D5D4DD /* TDHGameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHGameplay.h; sourceTree = "<group>"; };
 		25205FC21883FFD900D5D4DD /* TDHGameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHGameplay.m; sourceTree = "<group>"; };
 		25205FC41884041900D5D4DD /* GameplayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameplayTests.m; sourceTree = "<group>"; };
@@ -145,8 +145,8 @@
 		25E58F7E187ED438008BAA37 /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
+				25174B4E188D71A500F28FB3 /* highscores.sqlite */,
 				25174B411887DFD700F28FB3 /* wordList.sqlite */,
-				25174B4C188ACF7100F28FB3 /* highscores.sqlite */,
 				25E58F8A187ED438008BAA37 /* Main.storyboard */,
 				25E58F87187ED438008BAA37 /* TDHAppDelegate.h */,
 				25E58F88187ED438008BAA37 /* TDHAppDelegate.m */,
@@ -281,7 +281,7 @@
 				25E58F94187ED438008BAA37 /* Images.xcassets in Resources */,
 				25174B421887DFD700F28FB3 /* wordList.sqlite in Resources */,
 				25E58F83187ED438008BAA37 /* InfoPlist.strings in Resources */,
-				25174B4D188ACF7100F28FB3 /* highscores.sqlite in Resources */,
+				25174B4F188D71A500F28FB3 /* highscores.sqlite in Resources */,
 				25E58F8C187ED438008BAA37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

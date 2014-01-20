@@ -20,5 +20,6 @@
 
 @property (weak, nonatomic) id <TDHHighscoreViewControllerDelegate> delegate;
 @property NSArray *highscores;
+@property NSArray *result;
 
 @end

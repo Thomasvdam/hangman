@@ -28,6 +28,9 @@
     [super viewDidLoad];
 
     TDHHighscores *highscoresModel = [[TDHHighscores alloc] initWithDatabaseName:HIGH_SCORE_DB];
+    if ([self.result[0] boolValue]) {
+        [highscoresModel saveHighscore:[self.result[1] integerValue] withWord:self.result[2]];
+    }
     self.highscores = [highscoresModel getHighscores];
 }
 
@@ -57,7 +60,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSArray *highscore = [self.highscores objectAtIndex:indexPath.row];
-    cell.textLabel.text = highscore[2];
+    
+    UILabel *label;
+    label = (UILabel *)[cell viewWithTag:1];
+    label.text = highscore[1];
+    label = (UILabel *)[cell viewWithTag:2];
+    label.text = [NSString stringWithFormat:@"Mistakes made: %@", highscore[0]];
     
     return cell;
 }

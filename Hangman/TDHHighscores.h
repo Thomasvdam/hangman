@@ -10,7 +10,7 @@
 
 @interface TDHHighscores : TDHDatabaseConnector
 
-- (BOOL)saveHighscore:(int)score mistakesMade:(int)mistakes withWord:(NSString *)word;
+- (BOOL)saveHighscore:(int)score withWord:(NSString *)word;
 - (NSArray *)getHighscores;
 
 @end

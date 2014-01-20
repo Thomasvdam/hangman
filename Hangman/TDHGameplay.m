@@ -39,7 +39,7 @@
         self.mistakes = mistakes;
         self.unusedLetters = [self initiateUnusedLetters];
         self.unusedLettersInWord = [self initiateUnusedLettersInWord:self.pickedWord];
-        self.score = 1; // TODO!
+        self.score = 0;
         self.display = [self maskWord:self.pickedWord withSet:self.unusedLettersInWord];
         self.defaults = [NSUserDefaults standardUserDefaults];
     }
@@ -88,7 +88,7 @@
         self.mistakes = 4;
         self.unusedLetters = [self initiateUnusedLetters];
         self.unusedLettersInWord = [self initiateUnusedLettersInWord:self.pickedWord];
-        self.score = 1;
+        self.score = 0;
         self.display = [self maskWord:self.pickedWord withSet:self.unusedLettersInWord];
         self.defaults = [NSUserDefaults standardUserDefaults];
     }
@@ -164,6 +164,7 @@
     // Else the user must have guessed a wrong letter so remove it from the list and tally a mistake.
     [self.unusedLetters removeObject:guess];
     self.mistakes--;
+    self.score++;
     
     // Check whether the user has lost the game.
     if (self.mistakes == 0) {
@@ -177,8 +178,6 @@
 }
 
 - (void)saveGame {
-    
-    [self.defaults setBool:YES forKey:@"inProgress"];
     [self.defaults setObject:self.pickedWord forKey:@"pickedWord"];
     [self.defaults setObject:[self.unusedLetters allObjects] forKey:@"unusedLetters"];
     [self.defaults setInteger:self.mistakes forKey:@"mistakes"];
