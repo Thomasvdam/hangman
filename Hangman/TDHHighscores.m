@@ -13,7 +13,7 @@
 /*****
  * Save the score and word in the database.
  *****/
-- (BOOL)saveHighscore:(int)score withWord:(NSString *)word {
+- (void)saveHighscore:(int)score withWord:(NSString *)word {
     sqlite3_stmt    *statement;
     NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO scores (score, word) VALUES (%i, \"%@\")", score, word];
     
@@ -25,8 +25,6 @@
         NSLog(@"Highscore not saved.");
     }
     sqlite3_finalize(statement);
-    
-    return true;
 }
 
 /*****

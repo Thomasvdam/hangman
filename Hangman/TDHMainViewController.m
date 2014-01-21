@@ -148,11 +148,14 @@
     [self.mainTextField becomeFirstResponder];
 }
 
+#pragma mark - Segue preperations
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     } else if ([[segue identifier] isEqualToString:@"showHighscores"]) {
+        // Ensure the highscores view controller has the right variables.
         NSArray *temp = [[segue destinationViewController] childViewControllers];
         TDHHighscoreViewController *highscoresView = (TDHHighscoreViewController *)[temp objectAtIndex:0];
         [highscoresView setDelegate:self];

@@ -135,13 +135,13 @@
 }
 
 /*****
- * TODO.
+ * Process the char input passed.
  *****/
 - (int)input:(char)letter {
 
     NSString *guess = [NSString stringWithFormat:@"%c", letter];
     
-    // Check whether the letter has not already been guessed.
+    // Check whether the letter occurs in the word.
     if ([self.unusedLettersInWord containsObject:guess]) {
         
         [self.unusedLettersInWord removeObject:guess];
@@ -177,6 +177,9 @@
     return 2;
 }
 
+/*****
+ * Save the variables that are needed to reconstruct the game.
+ *****/
 - (void)saveGame {
     [self.defaults setObject:self.pickedWord forKey:@"pickedWord"];
     [self.defaults setObject:[self.unusedLetters allObjects] forKey:@"unusedLetters"];

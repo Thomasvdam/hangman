@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    // Save the highscore (if applicable) and retrieve the scores from the database.
     TDHHighscores *highscoresModel = [[TDHHighscores alloc] initWithDatabaseName:HIGH_SCORE_DB];
     if ([self.result[0] boolValue]) {
         [highscoresModel saveHighscore:[self.result[1] integerValue] withWord:self.result[2]];
@@ -64,6 +65,14 @@
     UILabel *label;
     label = (UILabel *)[cell viewWithTag:1];
     label.text = highscore[1];
+    
+    // Make the new highscore stand out.
+    if ([highscore[1] isEqualToString:self.result[2]]) {
+        [label setTextColor:[UIColor greenColor]];
+    } else {
+        [label setTextColor:[UIColor blackColor]];
+    }
+    
     label = (UILabel *)[cell viewWithTag:2];
     label.text = [NSString stringWithFormat:@"Mistakes made: %@", highscore[0]];
     

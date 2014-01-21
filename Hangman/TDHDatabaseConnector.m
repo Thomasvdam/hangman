@@ -56,7 +56,6 @@
     NSString *FileDB = [[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:self.databaseName];
     
     if (success) {
-        NSLog(@"File Exist");
         return;
     } else {
         [fileManager copyItemAtPath:FileDB toPath:[self findDatabasePath] error:nil];
